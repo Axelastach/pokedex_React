@@ -54,3 +54,7 @@
   border-radius: inherit;
   box-shadow: inherit;
 }
+
+body {
+  background-color: bisque;
+}
