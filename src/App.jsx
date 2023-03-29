@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import PokemonCard from './components/PokemonCard';
 import { func } from 'prop-types';
+import { useEffect } from 'react';
+import NavBar from './NavBar';
 
 const pokemonList = [
   {
@@ -36,26 +38,22 @@ const pokemonList = [
   },
 ];
 
-function NavBar({ count, setCount }) {
 
 
 
-  const handleClickPre = () => {
-    setCount(count - 1)
-  }
-  const handleClickNex = () => {
-    setCount(count + 1)
-  }
+export default function App() {
+  useEffect(
+    () => {
 
-  return (<><button onClick={handleClickPre}>Previous</button>
-    <button onClick={handleClickNex}>Next</button>
-  </>)
+      alert("hello pokemon trainer :)")
 
-}
-
-function App() {
+    },
+    [],
+  )
 
   const [count, setCount] = useState(0)
+
+  pokemonList[count].name === "pikachu" ? alert("pika pikachu !!!") : ""
 
   return (
 
@@ -74,5 +72,4 @@ function App() {
 
 
 
-
-export default App
+//  App
