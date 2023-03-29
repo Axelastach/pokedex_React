@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import PokemonCard from './components/PokemonCard';
+import { func } from 'prop-types';
 
 const pokemonList = [
   {
@@ -35,11 +36,8 @@ const pokemonList = [
   },
 ];
 
+function NavBar({ count, setCount }) {
 
-function App() {
-
-
-  const [count, setCount] = useState(0)
 
 
   const handleClickPre = () => {
@@ -49,10 +47,15 @@ function App() {
     setCount(count + 1)
   }
 
+  return (<><button onClick={handleClickPre}>Previous</button>
+    <button onClick={handleClickNex}>Next</button>
+  </>)
 
+}
 
+function App() {
 
-
+  const [count, setCount] = useState(0)
 
   return (
 
@@ -61,10 +64,8 @@ function App() {
 
       <PokemonCard name={pokemonList[count].name} imgSrc={pokemonList[count].imgSrc} />
 
+      <NavBar count={count} setCount={setCount} />
 
-
-      <button onClick={handleClickPre}>Previous</button>
-      <button onClick={handleClickNex}>Next</button>
     </div>
   );
 }
