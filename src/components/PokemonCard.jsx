@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-function PokemonCard(pokemonList) {
+function PokemonCard({imgSrc,name}) {
   // const pokemon = props.pokemonList[0];
-  if (pokemonList.imgSrc) {
+  if (imgSrc) {
     return <figure>
-      <img src={pokemonList.imgSrc} alt={pokemonList.name}
+      <img src={imgSrc} alt={name}
         className='card-img' />
-      <figcaption >{pokemonList.name}</figcaption>
+      <figcaption >{name}</figcaption>
     </figure>
   } else {
     return <div>
       <p>???</p>
-      <figcaption >{pokemonList.name}</figcaption>
+      <figcaption >{name}</figcaption>
 
     </div>
 

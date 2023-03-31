@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import PokemonCard from './components/PokemonCard';
-import { func } from 'prop-types';
+
 import { useEffect } from 'react';
 import NavBar from './NavBar';
 
@@ -41,6 +40,9 @@ const pokemonList = [
 
 
 
+
+
+
 export default function App() {
   useEffect(
     () => {
@@ -55,21 +57,44 @@ export default function App() {
 
   pokemonList[count].name === "pikachu" ? alert("pika pikachu !!!") : ""
 
+  
+
+  
+  const handlePokemonClick = (index) => {
+    setCount(index);
+  };
+  
   return (
-
-
     <div>
+    {pokemonList.map((pokemon, index) => (
+      <button key={pokemon.index} onClick={() => handlePokemonClick(index)}>
+        {pokemon.name}
+      </button>
+      
+    ))}
+     <PokemonCard name={pokemonList[count].name} imgSrc={pokemonList[count].imgSrc}/>
+  </div>
+);
 
-      <PokemonCard name={pokemonList[count].name} imgSrc={pokemonList[count].imgSrc} />
+// return (
+    // <div>
 
-      <NavBar count={count} setCount={setCount} />
+    //   />
 
-    </div>
-  );
+    //   <NavBar count={count} setCount={setCount} pokemonList={pokemonList} />
+
+
+    //   {/* <div>
+    //   <NavBar count={count} setCount={setCount} />
+    //   <h1>{pokemonList[count].name}</h1>
+    //   <img src={pokemonList[count].imgSrc} alt={pokemonList[count].name} />
+    // </div> */}
+
+    // </div>
+  // );
 }
 
 
 
 
 
-//  App
