@@ -3,6 +3,9 @@ import { useState } from 'react'
 import './App.css'
 import PokemonCard from './components/PokemonCard';
 
+
+import { func } from 'prop-types';
+
 import { useEffect } from 'react';
 import NavBar from './NavBar';
 
@@ -43,11 +46,14 @@ const pokemonList = [
 
 
 
+
+
 export default function App() {
   useEffect(
     () => {
 
-      alert("hello pokemon trainer :)")
+    alert("hello pokemon trainer :)")
+
 
     },
     [],
@@ -55,7 +61,11 @@ export default function App() {
 
   const [count, setCount] = useState(0)
 
-  pokemonList[count].name === "pikachu" ? alert("pika pikachu !!!") : ""
+
+
+  pokemonList[count].name==="pikachu"?alert("pika pikachu !!!"):""
+
+
 
   
 
@@ -93,7 +103,6 @@ export default function App() {
     // </div>
   // );
 }
-
 
 
 
